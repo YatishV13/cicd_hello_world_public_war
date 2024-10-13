@@ -21,7 +21,7 @@
 
   - name: create directory with a date in name
     file: 
-      path: /home/ubuntu/Anisble_backup
+      path: /home/ubuntu/Ansible_backup
       state: directory
       mode: 0777
 
