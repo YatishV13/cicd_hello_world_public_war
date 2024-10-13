@@ -8,27 +8,27 @@
 
   - name: create directory 
     file:
-      path: /home/ubuntu/ad
+      path: /home/ubuntu/Ansible
       state: directory
       mode: 0777
 
   - name: download war file
     ansible.builtin.get_url:
-      url: https://jfroghost123.jfrog.io/ui/repos/tree/General/repo1/CICD/webapp-{{ build_number }}.war
-      dest: /home/ubuntu/ad/webapp.war
+      url: https://jfroghost123.jfrog.io/artifactory/repo1/app1/webapp-${BUILD_NUMBER}.war
+      dest: /home/ubuntu/Ansible/webapp.war
       username: vyatishkumar@gmail.com
       password: Doctorstrange@123
 
   - name: create directory with a date in name
     file: 
-      path: /home/ubuntu/backup
+      path: /home/ubuntu/Anisble_backup
       state: directory
       mode: 0777
 
   - name: backup file with owner and permissions
     copy:
       src: /var/lib/tomcat10/webapps/webapp.war
-      dest: /home/ubuntu/backup/webapp.war
+      dest: /home/ubuntu/Ansible_backup/webapp.war
       remote_src: yes
 
   - name: Delete remote war file
@@ -38,6 +38,6 @@
 
   - name: deploy file with owner and permissions
     copy:
-      src: /home/ubuntu/ad/webapp.war
+      src: /home/ubuntu/Ansible/webapp.war
       dest: /var/lib/tomcat10/webapps/webapp.war
       remote_src: yes
