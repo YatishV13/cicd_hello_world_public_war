@@ -25,16 +25,16 @@
       state: directory
       mode: 0777
 
-  - name: backup file with owner and permissions
-    copy:
-      src: /var/lib/tomcat10/webapps/webapp.war
-      dest: /home/ubuntu/ansible_backup/webapp.war
-      remote_src: yes
+  #- name: backup file with owner and permissions
+   # copy:
+    #  src: /var/lib/tomcat10/webapps/webapp.war
+     # dest: /home/ubuntu/ansible_backup/webapp.war
+      #remote_src: yes
 
-  - name: Delete remote war file
-    file:
-      path: /var/lib/tomcat10/webapps/webapp.war
-      state: absent
+ #- name: Delete remote war file
+   # file:
+   #   path: /var/lib/tomcat10/webapps/webapp.war
+    #  state: absent
 
   - name: deploy file with owner and permissions
     copy:
