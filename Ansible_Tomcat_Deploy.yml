@@ -14,7 +14,7 @@
 
   - name: download war file
     ansible.builtin.get_url:
-      url: https://jfroghost123.jfrog.io/artifactory/repo1/app1/webapp-${BUILD_NUMBER}.war
+      url: https://jfroghost123.jfrog.io/ui/repos/tree/General/repo1/app1/webapp-${BUILD_NUMBER}.war
       dest: /home/ubuntu/Ansible/webapp.war
       username: vyatishkumar@gmail.com
       password: Doctorstrange@123
